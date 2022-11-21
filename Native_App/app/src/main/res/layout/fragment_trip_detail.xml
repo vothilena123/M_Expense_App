@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.trip.TripDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F7F9FA">
+
+        <TextView
+            android:id="@+id/detailTripName"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="#DBDDDD"
+            android:textAlignment="center"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/detailTripDestination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:textColor="#0C0C0C"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/detailTripDestinationLabel"
+            app:layout_constraintTop_toTopOf="@+id/detailTripDestinationLabel" />
+
+        <TextView
+            android:id="@+id/detailTripDestinationLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:text="Destination"
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailTripName" />
+
+        <TextView
+            android:id="@+id/detailTripDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/detailTripDestination"
+            app:layout_constraintStart_toStartOf="@+id/detailTripDestination"
+            app:layout_constraintTop_toTopOf="@+id/detailTripDateLabel" />
+
+        <TextView
+            android:id="@+id/detailTripDateLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Date of trip"
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/detailTripDestinationLabel"
+            app:layout_constraintStart_toStartOf="@+id/detailTripDestinationLabel"
+            app:layout_constraintTop_toBottomOf="@+id/detailTripDestination" />
+
+        <TextView
+            android:id="@+id/detailTransportation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/detailTripDate"
+            app:layout_constraintStart_toStartOf="@+id/detailTripDate"
+            app:layout_constraintTop_toTopOf="@+id/detailTransportationLabel" />
+
+        <TextView
+            android:id="@+id/detailTransportationLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Transportation "
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/detailTripDateLabel"
+            app:layout_constraintStart_toStartOf="@+id/detailTripDateLabel"
+            app:layout_constraintTop_toBottomOf="@+id/detailTripDate" />
+
+        <TextView
+            android:id="@+id/detailRisk"
+            android:layout_width="156dp"
+            android:layout_height="19dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/detailTransportation"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/detailTransportation"
+            app:layout_constraintTop_toTopOf="@+id/detailRiskLabel" />
+
+        <TextView
+            android:id="@+id/detailRiskLabel"
+            android:layout_width="137dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="15dp"
+            android:text="Risk assessment "
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/detailUpgradeLabel"
+            app:layout_constraintEnd_toEndOf="@+id/detailTransportationLabel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/detailTransportationLabel"
+            app:layout_constraintTop_toBottomOf="@+id/detailTransportation"
+            app:layout_constraintVertical_bias="0.052" />
+
+        <TextView
+            android:id="@+id/detailUpgrade"
+            android:layout_width="155dp"
+            android:layout_height="17dp"
+            android:layout_marginTop="8dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/detailRisk"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/detailRisk"
+            app:layout_constraintTop_toTopOf="@+id/detailUpgradeLabel" />
+
+        <TextView
+            android:id="@+id/detailUpgradeLabel"
+            android:layout_width="170dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="12dp"
+            android:text="Custom-made upgrades "
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/detailRiskLabel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/detailRiskLabel"
+            app:layout_constraintTop_toBottomOf="@+id/detailRisk" />
+
+        <TextView
+            android:id="@+id/detailDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/detailUpgrade"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/detailUpgrade"
+            app:layout_constraintTop_toTopOf="@+id/detailDescriptionLabel" />
+
+        <TextView
+            android:id="@+id/detailDescriptionLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Description "
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/detailUpgradeLabel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/detailUpgradeLabel"
+            app:layout_constraintTop_toBottomOf="@+id/detailUpgrade" />
+
+        <Button
+            android:id="@+id/updateTripButton"
+            android:layout_width="145dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Update Trip"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@+id/deleteTripButton"
+            app:layout_constraintHorizontal_bias="0.44"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailDescription" />
+
+        <Button
+            android:id="@+id/deleteTripButton"
+            android:layout_width="145dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:text="Delete Trip"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailDescription" />
+
+        <Button
+            android:id="@+id/tripExpenseButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            android:backgroundTint="#1FBFB0"
+            android:text="Add Expenses"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/updateTripButton" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/expenseList"
+            android:name="com.vothilena.tripapplication.ui.expense.ExpenseFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tripExpenseButton"
+            tools:layout="@layout/fragment_expense" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

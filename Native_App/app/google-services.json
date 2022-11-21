@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "119533420839",
+    "project_id": "tripapplication-413d7",
+    "storage_bucket": "tripapplication-413d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119533420839:android:356c6d7e567886a3d3a902",
+        "android_client_info": {
+          "package_name": "com.vothilena.tripapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119533420839-mp2a3i94ijmt5ipllv25emoris9jke23.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vothilena.tripapplication",
+            "certificate_hash": "956371ddf7945ad3e330bb7b05ff9a33f2d5f3bc"
+          }
+        },
+        {
+          "client_id": "119533420839-tptvu3e8275nvpqq2ufbqljje0v8koa0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcLxdn2PMQ8o-HthoXeiBNjjUEdnMfSd8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "119533420839-tptvu3e8275nvpqq2ufbqljje0v8koa0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

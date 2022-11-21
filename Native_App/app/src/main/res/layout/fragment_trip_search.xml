@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.trip.TripSearchFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/searchTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Search"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/searchName"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.467"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchTitle" />
+
+        <EditText
+            android:id="@+id/searchDate"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:ems="10"
+            android:hint="Date"
+            android:inputType="date"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/searchName"
+            app:layout_constraintStart_toStartOf="@+id/searchName"
+            app:layout_constraintTop_toBottomOf="@+id/searchName" />
+
+        <Button
+            android:id="@+id/searchButtonCancel"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:text="Cancel"
+            app:layout_constraintStart_toStartOf="@+id/searchDate"
+            app:layout_constraintTop_toBottomOf="@+id/searchDate" />
+
+        <Button
+            android:id="@+id/searchButtonSearch"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="25dp"
+            android:text="Search"
+            app:layout_constraintBottom_toBottomOf="@+id/searchButtonCancel"
+            app:layout_constraintEnd_toEndOf="@+id/searchDate"
+            app:layout_constraintStart_toEndOf="@+id/searchButtonCancel"
+            app:layout_constraintTop_toTopOf="@+id/searchButtonCancel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

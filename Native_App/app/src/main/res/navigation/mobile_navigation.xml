@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_trip">
+
+    <fragment
+        android:id="@+id/nav_trip"
+        android:name="com.vothilena.tripapplication.ui.trip.TripFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_trip" />
+
+
+    <fragment
+        android:id="@+id/tripDetailFragment"
+        android:name="com.vothilena.tripapplication.ui.trip.TripDetailFragment"
+        android:label="Trip Detail"
+        tools:layout="@layout/fragment_trip_detail" />
+
+    <fragment
+        android:id="@+id/tripUpdateFragment"
+        android:name="com.vothilena.tripapplication.ui.trip.TripUpdateFragment"
+        android:label="Trip Update"
+        tools:layout="@layout/fragment_trip_update" />
+
+    <fragment
+        android:id="@+id/addTripFragment"
+        android:name="com.vothilena.tripapplication.ui.trip.AddTripFragment"
+        android:label="Trip Add"
+        tools:layout="@layout/fragment_add_trip" />
+    <fragment
+        android:id="@+id/expenseFragment"
+        android:name="com.vothilena.tripapplication.ui.expense.ExpenseFragment"
+        android:label="fragment_expense"
+        tools:layout="@layout/fragment_expense" />
+    <activity
+        android:id="@+id/backupActivity"
+        android:name="com.vothilena.tripapplication.BackupActivity"
+        android:label="activity_backup"
+        tools:layout="@layout/activity_backup" />
+    <dialog
+        android:id="@+id/expenseAddFragment"
+        android:name="com.vothilena.tripapplication.ui.expense.ExpenseAddFragment"
+        android:label="fragment_expense_add"
+        tools:layout="@layout/fragment_expense_add" />
+</navigation>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.trip.TripAddConfirmFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="#F18D8D"
+            android:padding="15dp"
+            android:text="Confirmation"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/confirmTripName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:textColor="#0C0C0C"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/confirmTripNameLabel"
+            app:layout_constraintTop_toTopOf="@+id/confirmTripNameLabel" />
+
+        <TextView
+            android:id="@+id/confirmTripNameLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="100dp"
+            android:text="Name"
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/confirmTripDestination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/confirmTripName"
+            app:layout_constraintStart_toStartOf="@+id/confirmTripName"
+            app:layout_constraintTop_toTopOf="@+id/confirmTripDestinationLabel" />
+
+        <TextView
+            android:id="@+id/confirmTripDestinationLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Date of trip"
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/confirmTripNameLabel"
+            app:layout_constraintStart_toStartOf="@+id/confirmTripNameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/confirmTripName" />
+
+        <TextView
+            android:id="@+id/confirmTripDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/confirmTripDestination"
+            app:layout_constraintStart_toStartOf="@+id/confirmTripDestination"
+            app:layout_constraintTop_toTopOf="@+id/confirmTripDateLabel" />
+
+        <TextView
+            android:id="@+id/confirmTripDateLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Date of trip"
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/confirmTripDestinationLabel"
+            app:layout_constraintStart_toStartOf="@+id/confirmTripDestinationLabel"
+            app:layout_constraintTop_toBottomOf="@+id/confirmTripDestination" />
+
+        <TextView
+            android:id="@+id/confirmTransportation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/confirmTripDate"
+            app:layout_constraintStart_toStartOf="@+id/confirmTripDate"
+            app:layout_constraintTop_toTopOf="@+id/confirmTransportationLabel" />
+
+        <TextView
+            android:id="@+id/confirmTransportationLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Transportation "
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/confirmTripDateLabel"
+            app:layout_constraintStart_toStartOf="@+id/confirmTripDateLabel"
+            app:layout_constraintTop_toBottomOf="@+id/confirmTripDate" />
+
+        <TextView
+            android:id="@+id/confirmRisk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/confirmTransportation"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/confirmTransportation"
+            app:layout_constraintTop_toTopOf="@+id/confirmRiskLabel" />
+
+        <TextView
+            android:id="@+id/confirmRiskLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Risk assessment "
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/confirmUpgradeLabel"
+            app:layout_constraintEnd_toEndOf="@+id/confirmTransportationLabel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/confirmTransportationLabel"
+            app:layout_constraintTop_toBottomOf="@+id/confirmTransportation"
+            app:layout_constraintVertical_bias="0.052" />
+
+        <TextView
+            android:id="@+id/confirmUpgrade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/confirmRisk"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/confirmRisk"
+            app:layout_constraintTop_toTopOf="@+id/confirmUpgradeLabel" />
+
+        <TextView
+            android:id="@+id/confirmUpgradeLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Custom-made upgrades "
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/confirmRiskLabel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/confirmRiskLabel"
+            app:layout_constraintTop_toBottomOf="@+id/confirmRisk" />
+
+        <TextView
+            android:id="@+id/confirmDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/confirmUpgrade"
+            app:layout_constraintStart_toStartOf="@+id/confirmUpgrade"
+            app:layout_constraintTop_toTopOf="@+id/confirmDescriptionLabel" />
+
+        <TextView
+            android:id="@+id/confirmDescriptionLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Description "
+            android:textColor="#2196F3"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/confirmUpgradeLabel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/confirmUpgradeLabel"
+            app:layout_constraintTop_toBottomOf="@+id/confirmUpgrade" />
+
+        <Button
+            android:id="@+id/confirmButtonCancel"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="50dp"
+            android:background="#F18D8D"
+            android:text="Cancel"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/confirmTripNameLabel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirmDescription" />
+
+        <Button
+            android:id="@+id/confirmButtonConfirm"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="#F18D8D"
+            android:text="Confirm"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/confirmButtonCancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/confirmButtonCancel"
+            app:layout_constraintTop_toTopOf="@+id/confirmButtonCancel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

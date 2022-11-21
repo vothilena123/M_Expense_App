@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/database.js"></script>
+        <script src="js/index.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/index.css">
+    
+        <title>Trip Management</title>
+    </head>
+
+    <body>       
+        <!-- PAGE "HOME" -->
+        <div data-role="page" id="page-home" >
+
+                <!-- Navigation bar -->
+                <div class="header-top">
+                    <ul>
+                        <li data-icon="false" style = "--x:1;"><a href="#page-home" data-transition="none">Home</a></li>
+                        <li data-icon="false" style = "--x:2;"><a href="#page-create" data-transition="none">Create Trip</a></li>
+                        <li data-icon="false" style = "--x:3;"><a href="#page-list" data-transition="none">List Trip</a></li>
+                        <li data-icon="false" style = "--x:4;"><a href="#page-backup" data-transition="none">Back up</a></li>
+                        <li data-icon="false" style = "--x:5;"><a href="#page-about" data-transition="none">About</a></li>
+                        
+                    </ul>
+                </div>
+
+                <!-- Video background -->
+                <div class="video-container">
+                    <video src="img/video-hanoi.mp4" autoplay muted loop></video>
+                </div>            
+        </div>
+    
+        <!-- PAGE "CREATE NEW TRIP" -->
+        <div data-role="page" id="page-create">
+
+            <!-- Navigation bar for screen smaller than 800px -->
+            <div data-role="panel" data-display="overlay" id="panel">
+                <div class="wrapper">
+                    <ul>
+                        <!-- Link opens home page -->
+                        <li><a href="#page-home" data-transition="none">Home</a></li>
+                        <!-- Link opens create trip page -->
+                        <li><a href="#page-create" data-transition="none">Create Trip</a></li>
+                        <!-- Link opens list trip page -->
+                        <li><a href="#page-list" data-transition="none">List Trip</a></li>
+                        <!-- Link opens back up page -->
+                        <li><a href="#page-backup" data-transition="none">Back up</a></li>
+                        <!-- Link opens about page -->
+                        <li><a href="#page-about" data-transition="none">About</a></li>
+                        
+                    </ul>
+                </div>               
+            </div>
+
+            <!-- Navigation bar for screen larger than 800px -->
+            <div class="header-top" id="menu">
+                <ul>
+                    <li data-icon="false" style = "--x:1;"><a href="#page-home" data-transition="none">Home</a></li>
+                    <li data-icon="false" style = "--x:2;"><a href="#page-create" data-transition="none">Create Trip</a></li>
+                    <li data-icon="false" style = "--x:3;"><a href="#page-list" data-transition="none">List Trip</a></li>
+                    <li data-icon="false" style = "--x:4;"><a href="#page-backup" data-transition="none">Back up</a></li>
+                    <li data-icon="false" style = "--x:5;"><a href="#page-about" data-transition="none">About</a></li>
+                    
+                </ul>
+            </div>
+           
+            <div class="video-container">
+                <video src="img/video-hanoi.mp4" autoplay muted loop></video>
+            </div>
+                <!-- Create Trip Form -->
+                <div class="video-container">
+                    <video src="img/video-hanoi.mp4" autoplay muted loop></video>
+                </div>
+                <div class="header-content">
+                    
+                    <!-- Form contains input fields to input trip's information -->
+                    <form action="" id="frm-register">
+                        <!-- Menu icon opens navigation bar -->
+                        <a id="icon-menu"style="display:none">
+                            <img style="position:absolute;left: 62px;width: 30px" src="./img/icon-menu.png" alt="">
+                        </a>
+                        
+                        <h1> Create a New Trip</h1>
+                        <p>Trip's name (*)</p>
+                        <input type="text" id="name"  placeholder="Enter trip name" required>
+                        <p>Destination (*)</p>
+                        <input type="text" id="destination" placeholder="Enter destination" required>
+                        <p>Trip's date (*)</p>
+                        <input type="date" id="date"  required>
+                        <p>Transportation (*)</p>
+                        <input type="text" id="transportation"  placeholder="Enter transportation" required>
+                        <p style="display:inline-block; float:left;">Risk assessment (*)</p>
+                        <select id="risk" data-role="slider" data-mini="true" style="width: 78px;">
+                            <option value="No" selected>No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                        <p style="margin-top:0;">Upgrade Service</p>
+                        <input type="text" id="upgrade"  placeholder="Enter upgrade service">
+                        <p>Description</p>
+                        <input type="text" id="description"  placeholder="Enter description">
+    
+                        <button type="submit" class="blue">Create</button>                       
+                    </form>                    
+                </div>
+
+                <!-- CONFIRM DIALOG FORM -->
+                <form data-role="popup" id="frm-confirm" class="ui-content " data-overlay-theme="b">
+                    <table style="text-align: left;">
+                        <!-- Inputed information will be displayed to confirm -->
+                        <tbody>
+                            <tr>
+                                <th>Name</th><td id="name"></td>
+                            </tr>        
+                            <tr><th>Destination</th><td id="destination"></td></tr>
+                            <tr><th>Date</th><td id="date"></td></tr>
+                            <tr><th>Description</th><td id="description"></td></tr>
+                            <tr><th>Risk Assessment</th> <td id="risk"></td></tr> 
+                            <tr><th>Transportation</th><td id="transportation"></td></tr>
+                            <tr><th>Upgrate Service</th><td id="upgrade"></td></tr>
+                    </tbody></table>
+    
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a" style="padding: 5px;">
+                            <!-- Button edit to re-create trip -->
+                            <button type="button" id="edit">Edit</button>
+                        </div>
+    
+                        <div class="ui-block-b" style="padding: 5px;">
+                            <!-- Button confirm to confirm trip's information inputed in create trip page -->
+                            <button type="submit" class="blue">Confirm</button>
+                        </div>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    <!-- PAGE "TRIP LIST" -->
+    <div data-role="page" id="page-list">
+        <div data-role="panel" data-display="overlay" id="panel">
+            <div class="wrapper">
+                <ul style="top: 40%;">
+                    <li><a href="#page-home" data-transition="none">Home</a></li>
+                    <li><a href="#page-create" data-transition="none">Create Trip</a></li>
+                    <li><a href="#page-list" data-transition="none">List Trip</a></li>
+                    <li><a href="#page-backup" data-transition="none">Back up</a></li>
+                    <li><a href="#page-about" data-transition="none">About</a></li>
+                    
+                </ul>
+            </div>            
+        </div>
+
+        <div class="header-top" id="menu">
+            <ul>
+                <li data-icon="false" style = "--x:1;"><a href="#page-home" data-transition="none">Home</a></li>
+                <li data-icon="false" style = "--x:2;"><a href="#page-create" data-transition="none">Create Trip</a></li>
+                <li data-icon="false" style = "--x:3;"><a href="#page-list" data-transition="none">List Trip</a></li>
+                <li data-icon="false" style = "--x:4;"><a href="#page-backup" data-transition="none">Back up</a></li>
+                <li data-icon="false" style = "--x:5;"><a href="#page-about" data-transition="none">About</a></li>
+                
+            </ul>
+        </div>
+        <div class="video-container">
+            <video src="img/video-hanoi.mp4" autoplay muted loop></video>
+        </div>
+
+        <div class="header-content">
+            <!-- Menu icon opens navigation bar -->
+            <a id="icon-menu"style="display:none">
+                <img  id="icon-menu" style="width: 40px; margin-top:8px; display:none" src="./img/icon-menu-white.png" alt="">
+            </a>
+
+            <!-- Table displays trip's information -->
+            <table>
+                <tr>
+                    <!-- Search field to input trip's name -->
+                    <td style="width: 100%; padding: 0px;">
+                        <input type="text" placeholder="Filter trip..." id="txt-filter">
+                    </td>
+                    <!-- Icon filter to open dialog search by name, destination, and date -->
+                    <td style="padding: 0px;">
+                        <button id="btn-filter-popup"><img src="img/icon-filter.png" height="20px"></button>
+                    </td>
+                    <!-- Button reset to reset trip list -->
+                    <td style="padding: 0px;">
+                        <button class="ui-btn ui-icon-refresh ui-btn-icon-notext ui-nodisc-icon"
+                            id="btn-reset"></button>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- form search trip by name or destination or date -->
+            <form data-role="popup" id="frm-search" class="ui-content" style="width: 80vw;" data-overlay-theme="b">
+                <label class="small-text">Trip Name</label>
+                <input type="text" id="name" data-clear-btn="true" placeholder="Enter trip name here...">
+
+                <label class="small-text">Destination</label>
+                <input type="text" placeholder="Enter destination here..." id="destination" data-clear-btn="true">
+
+                <label class="small-text">Date</label>
+                <input type="date" id="date">
+
+                <button type="submit" class="green">Search</button>
+            </form>
+
+           <!-- An added trip will be displayed in Trip List page -->
+            <ul id="list-trip" data-role="listview" class="ui-nodisc-icon ui-alt-icon"></ul>
+        </div>      
+        </div>
+    </div>
+
+     <!-- PAGE "TRIP DETAILS" -->
+     <div data-role="page" id="page-detail">
+        <div data-role="panel" data-display="overlay" id="panel">
+            <div class="wrapper">
+                <ul style="top: 40%;">
+                    <li><a href="#page-home" data-transition="none">Home</a></li>
+                    <li><a href="#page-create" data-transition="none">Create Trip</a></li>
+                    <li><a href="#page-list" data-transition="none">List Trip</a></li>
+                    <li><a href="#page-backup" data-transition="none">Back up</a></li>
+                    <li><a href="#page-about" data-transition="none">About</a></li>
+                    
+                </ul>
+            </div>            
+        </div>
+
+        <div class="header-top" id="menu">
+            <ul>
+                <li data-icon="false" style = "--x:1;"><a href="#page-home" data-transition="none">Home</a></li>
+                <li data-icon="false" style = "--x:2;"><a href="#page-create" data-transition="none">Create Trip</a></li>
+                <li data-icon="false" style = "--x:3;"><a href="#page-list" data-transition="none">List Trip</a></li>
+                <li data-icon="false" style = "--x:4;"><a href="#page-backup" data-transition="none">Back up</a></li>
+                <li data-icon="false" style = "--x:5;"><a href="#page-about" data-transition="none">About</a></li>
+                
+            </ul>
+        </div>
+        <div class="video-container">
+            <video src="img/video-hanoi.mp4" autoplay muted loop></video>
+        </div>
+
+        <div class="header-content">
+           
+                <div style=" display:flex; justify-content:space-between; align-items:center">
+                    <!-- Back to list icon button -->
+                    <a href="#page-list" data-transition="none" id="btn-back"
+                        class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-nodisc-icon ">Back to list</a>
+                    <!-- Menu icon button to open navigation bar-->
+                    <a id="icon-menu"style="display:none">
+                        <img  id="icon-menu" style="width: 40px; margin-top:8px; display:none" src="./img/icon-menu-white.png" alt=""> 
+                    </a>
+                    <!-- 3 dots icon to open Update and Delete option-->
+                    <a href="#option" data-rel="popup" data-transition="none" style="height: 29px; margin:0;padding:0 12px 30px 12px; background-color:#6DBFE2">
+                        <img src="img/icon-three-dots.png" height="20px">
+                    </a> 
+                        
+                    
+                </div>           
+    
+            <div data-role="main" class="ui-content" style="height: 600px;">
+                <!-- Show Update and Delete option -->
+                <div data-role="popup" id="option">
+                    <ul data-role="listview" data-icon="false">
+                        <li>
+                            <!-- Link opens update option -->
+                            <a href="#frm-update" data-rel="popup" data-position-to="window" id="btn-update-popup">
+                                Update
+                            </a>
+                        </li>
+    
+                        <li>
+                            <!-- Link opens delete option -->
+                            <a href="#frm-delete" data-rel="popup" data-position-to="window" id="btn-delete-popup">
+                                Delete
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Dialog delete trip -->
+                <form data-role="popup" id="frm-delete" data-overlay-theme="b">
+                    <div data-role="header" class="delete-header">
+                        <h1 style="padding-top: 20px;">Delete Trip?</h1>
+                    </div>
+    
+                    <div role="main" class="ui-content">
+                        <h3>Are you sure you want to delete this trip?</h3>
+                        <p>This action cannot be undone.</p>
+                        <br>
+    
+                        <p><em>Please type "<strong>confirm delete</strong>" to delete this trip.</em></p>
+                        <!-- Input field to active delete button -->
+                        <input type="text" id="txt-confirm">
+    
+                        <div style="text-align: right;">
+                            <!-- Cancel delete trip button -->
+                            <a class="ui-btn ui-corner-all ui-btn-inline" data-rel="back">Cancel</a>
+                            <!-- Delete trip button -->
+                            <button type="submit" class="ui-btn ui-corner-all ui-btn-inline ui-disabled blue"
+                                id="btn-delete">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </form>
+    
+                <!-- Dialog update trip -->
+                <form id="frm-update" data-role="popup" class="ui-content" data-overlay-theme="b">
+                    <!-- The input fields will display with the old information -->
+                    <label class="small-text">Trip Name</label>
+                    <input type="text" id="name" data-clear-btn="true" placeholder="Enter trip name here..." required>
+    
+                    <fieldset class="ui-grid-a" style="overflow: visible;">
+                        <div class="ui-block-a" style="padding-right: 5px;">
+                            <label class="small-text">Destination</label>
+                            <input type="text" placeholder="Enter destination here..." id="destination"
+                                data-clear-btn="true" required>
+                        </div>
+    
+                        <div class="ui-block-b" style="padding-left: 5px;">
+                            <label class="small-text">Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+                    </fieldset>
+
+                    <label class="small-text">Transportation</label>
+                    <input type="text" placeholder="Enter transportation here..." id="transportation" data-clear-btn="true">
+
+                    <label class="small-text">Required Risk Assessment</label>
+                    <select id="risk" data-role="slider" data-mini="true">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+
+                    <label class="small-text">Update service</label>
+                    <input type="text" placeholder="Enter update here..." id="update" data-clear-btn="true">
+    
+                    <label class="small-text">Description</label>
+                    <input type="text" placeholder="Enter description here..." id="description" data-clear-btn="true">
+    
+                        
+                    <div class="ui-grid-a">
+                        <!-- Cancel update trip button -->
+                        <div class="ui-block-a" style="padding: 5px;">
+                            <button type="button" id="cancel">Cancel</button>
+                        </div>
+                        <!-- Update button-->
+                        <div class="ui-block-b" style="padding: 5px;">
+                            <button type="submit" class="green">Update</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Trip detail table -->
+                <div id="detail">
+                    
+                    <h1 style="text-align: center; padding-right : 0" id="name"></h1>
+                    <!-- Display all information of added trip -->
+                    <table style="margin-left: 20px; margin-top: 20px;">
+                        <tr>
+                            <th><img src="img/icon-destination.png" height="20px"></th>
+                            <td id="destination"></td>
+                        </tr>
+    
+                        <tr>
+                            <th><img src="img/icon-date.png" height="20px"></th>
+                            <td style="padding-left:14px" id="date"></td>
+                        </tr>
+    
+                        <tr>
+                            <th><img src="img/icon-description.png" height="20px"></th>
+                            <td style="padding-left:14px" id="description"></td>
+                        </tr>
+    
+                        <tr>
+                            <th><img src="img/icon-risk.png" height="20px"></th>
+                            <td id="risk"></td>
+                        </tr>
+                       
+                        <tr>
+                            <th><img src="img/icon-transportation.png" height="20px"></th>
+                            <td id="transportation"></td>
+                        </tr>
+    
+                        <tr>
+                            <th><img src="img/icon-custom.png" height="20px"></th>
+                            <td style="padding-left:14px" id="upgrade"></td>
+                        </tr>
+                    </table>
+                </div>
+    
+                <table style="margin-top: 20px; text-align: left; margin-bottom: 5px;">
+                    <tr style="width: 100%;">
+                        <td>
+                            <!-- Show expense icon button -->
+                            <button style="font-size: 10px;" id="btn-toggle-expense"
+                                class="ui-btn ui-alt-icon ui-icon-plus ui-corner-all ui-btn-icon-notext ui-nodisc-icon ui-btn-inline ui-mini transparent">
+                                Toggle Expense
+                            </button>
+                        </td>
+    
+                        <th style="font-size: 15px; width: 100%;">Show Expenses</th>
+    
+                        <td>
+                            <!-- Button add expense -->
+                            <a href="#frm-add-expense" data-rel="popup" data-position-to="window" id="btn-add-expense-popup"
+                                class="ui-btn ui-mini green ui-corner-all">
+                                Add
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+    
+                <!-- Display expense list -->
+                <div id="expense" style="display: none;">
+                    <div style="border-top: 1px solid #4F9068; padding: 5px 0px;" id="list"></div>
+                </div>
+            </div>
+    
+            <!-- Form add expense -->
+            <!-- Input field to input expense's information -->
+            <form id="frm-add-expense" data-role="popup" class="ui-content" data-overlay-theme="b">
+                <fieldset class="ui-grid-a" style="overflow: visible;">
+                    <div class="ui-block-a" style="padding-right: 5px;">
+                        <label class="small-text">Amount</label>
+                        <input type="number" id="amount" data-clear-btn="true" placeholder="Enter amount here..." required>
+                    </div>
+    
+                    <div class="ui-block-b" style="padding-left: 5px;">
+                        <label class="small-text">Expense Type</label>
+                        <select id="type" data-mini="true" required>
+                            <option value="Travel">Travel</option>
+                            <option value="Food">Food</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </fieldset>
+    
+                <fieldset class="ui-grid-a" style="overflow: visible;">
+                    <div class="ui-block-a" style="padding-right: 5px;">
+                        <label class="small-text">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+    
+                    <div class="ui-block-b" style="padding-left: 5px;">
+                        <label class="small-text">Time</label>
+                        <input type="time" id="time" required>
+                    </div>
+                </fieldset>
+    
+                <label class="small-text">Comment</label>
+                <input type="text" placeholder="Enter comment here..." id="comment" data-clear-btn="true">
+    
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" style="padding: 5px;">
+                        <!-- Cancel add expense button -->
+                        <button type="button" id="cancel">Cancel</button>
+                    </div>
+    
+                    <div class="ui-block-b" style="padding: 5px;">
+                        <!-- Add expense button -->
+                        <button type="submit" class="blue">Add</button>
+                    </div>
+                </div>
+            </form>              
+        </div>   
+        </div>
+
+    </body>
+
+    
+</html>

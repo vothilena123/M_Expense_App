@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="50px"
+    android:paddingTop="10px"
+    tools:context=".ui.expense.ExpenseAddFragment">
+
+    <TextView
+        android:id="@+id/type_expense"
+        style="@style/Widget.AppCompat.TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Type of Expense (Required)"
+        android:textColor="#2196F3" />
+
+    <EditText
+        android:id="@+id/edTypeExpense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="transportation/meal/services..."
+        android:textColor="#ED0C0C" />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Amount  (Required)"
+        android:textColor="#2196F3" />
+
+    <EditText
+        android:id="@+id/edAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#ED0C0C" />
+
+    <TextView
+        android:id="@+id/tripDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date of trip  (Required)"
+        android:textColor="#2196F3" />
+
+    <EditText
+        android:id="@+id/edTripDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#ED0C0C" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time  (Required)"
+        android:textColor="#2196F3" />
+
+    <EditText
+        android:id="@+id/edTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#ED0C0C" />
+
+    <TextView
+        android:id="@+id/comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Comment "
+        android:textColor="#2196F3" />
+
+    <EditText
+        android:id="@+id/edComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#ED0C0C"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/add_expense_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Add Expense" />
+
+
+</LinearLayout>
